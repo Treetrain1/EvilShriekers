@@ -1,0 +1,37 @@
+{
+	"schema_version": 1,
+	"quilt_loader": {
+		"group": "com.treetrain1",
+		"id": "evilshriekers",
+		"version": "${version}",
+		"metadata": {
+			"name": "Evil Shriekers",
+			"description": "Makes all Sculk Shriekers able to summon Wardens.",
+			"contributors": {
+				"Treetrain1": "Owner"
+			},
+			"contact": {
+				"homepage": "https://github.com/Treetrain1/EvilShriekers",
+				"issues": "https://github.com/Treetrain1/EvilShriekers/issues",
+				"sources": "https://github.com/Treetrain1/EvilShriekers"
+			},
+			"icon": "assets/evilshriekers/icon.png"
+		},
+		"intermediate_mappings": "net.fabricmc:intermediary",
+		"entrypoints": {
+			"init": "com.treetrain1.evilshriekers.EvilShriekers"
+		},
+		"accessWidener": "evilshriekers.accesswidener",
+		"depends": [
+			{
+				"id": "quilt_loader",
+				"versions": ">=0.17.0-beta.2"
+			},
+			{
+				"id": "minecraft",
+				"versions": ">=1.19"
+			}
+		]
+	},
+	"mixin": "evilshriekers.mixins.json"
+}

@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.treetrain1.evilshriekers.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "SculkShriekerBlockMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+	}
+}
