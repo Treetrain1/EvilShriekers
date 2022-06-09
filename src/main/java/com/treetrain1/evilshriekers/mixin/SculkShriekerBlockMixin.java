@@ -26,6 +26,6 @@ public class SculkShriekerBlockMixin {
 	@Inject(method = "getStateForPlacement", at = @At("HEAD"), cancellable = true)
 	public void getStateForPlacement(BlockPlaceContext ctx, CallbackInfoReturnable<BlockState> cir) {
 		SculkShriekerBlock shrieker = SculkShriekerBlock.class.cast(this);
-		cir.setReturnValue(shrieker.defaultBlockState().setValue(WATERLOGGED, ctx.getLevel().getFluidState(ctx.getClickedPos()).getType() == Fluids.WATER).setValue(CAN_SUMMON, true));
+		cir.setReturnValue(shrieker.defaultBlockState().setValue(WATERLOGGED, ctx.getLevel().getFluidState(ctx.getClickedPos()).getType() == Fluids.WATER).setValue(CAN_SUMMON, Boolean.valueOf(true)));
 	}
 }
