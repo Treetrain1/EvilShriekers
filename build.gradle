@@ -4,7 +4,7 @@ plugins {
 }
 
 archivesBaseName = project.archives_base_name
-version = project.version
+version = getVersion()
 group = project.maven_group
 
 repositories {
@@ -46,6 +46,12 @@ tasks.withType(JavaCompile).configureEach {
 	it.options.encoding = "UTF-8"
 	// Minecraft 1.18 (1.18-pre2) upwards uses Java 17.
 	it.options.release = 17
+	options.fork = true
+	options.incremental = true
+}
+
+tasks.withType(Test).configureEach {
+	maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
 }
 
 java {
@@ -67,6 +73,16 @@ jar {
 	from("LICENSE") {
 		rename { "${it}_${archivesBaseName}" }
 	}
+}
+
+String getVersion() {
+	String version = "${project.mod_version}+mc_${project.minecraft}"
+
+	if (findProperty("releaseType") != "stable") {
+		version += "-unstable"
+	}
+
+	return version
 }
 
 // Configure the maven publication
