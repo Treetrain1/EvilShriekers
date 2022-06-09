@@ -1,6 +1,5 @@
 {
-	"schema_version": 1,
-	"quilt_loader": {
+	"schemaVersion": 1,
 		"group": "com.treetrain1",
 		"id": "evilshriekers",
 		"version": "${version}",
@@ -19,19 +18,15 @@
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "com.treetrain1.evilshriekers.EvilShriekers"
+          "main": [
+            "com.treetrain1.evilshriekers.EvilShriekers"
+          ]
 		},
 		"accessWidener": "evilshriekers.accesswidener",
-		"depends": [
-			{
-				"id": "quilt_loader",
-				"versions": ">=0.17.0-beta.2"
-			},
-			{
-				"id": "minecraft",
-				"versions": ">=1.19"
-			}
-		]
-	},
+		"depends": {
+			"fabricloader": ">=0.14.7",
+			"minecraft": "~1.19",
+			"java": ">=17"
+		},
 	"mixin": "evilshriekers.mixins.json"
 }
