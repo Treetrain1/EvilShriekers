@@ -4,6 +4,7 @@
   "package": "com.treetrain1.evilshriekers.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "SculkBlockMixin",
     "SculkShriekerBlockMixin"
   ],
   "injectors": {
