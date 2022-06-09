@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(SculkBlock.class)
 public class SculkBlockMixin {
 
-	@Inject(method = "getRandomGrowthState", at = @At("TAIL"), cancellable = true)
+	@Inject(method = "getRandomGrowthState", at = @At("HEAD"), cancellable = true)
 	private void getRandomGrowthState(LevelAccessor world, BlockPos pos, RandomSource random, boolean randomize, CallbackInfoReturnable<BlockState> cir) {
 		BlockState blockState;
 		if (random.nextInt(11) == 0) {
